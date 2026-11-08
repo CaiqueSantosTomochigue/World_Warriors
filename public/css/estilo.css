@@ -105,7 +105,7 @@ nav {
 
 /* SEÇÃO HERO */
 
-.secao_hero {
+.container_sf {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -211,7 +211,7 @@ nav {
 
 /* SEÇÃO SOBRE */
 
-.sobre{
+.container_sobre{
   display: flex;
   flex-direction: row;
   position: relative;
@@ -289,7 +289,7 @@ nav {
 
 /* SEÇÃO PERSONAGENS */
 
-.personagens {
+.container_personagens {
   display: flex;
   flex-direction: column;
   position: relative;
@@ -382,7 +382,7 @@ nav {
 
 /* SEÇÃO SOBRE MIM */
 
-.sobre_mim{
+.container_sobre_mim{
   display: flex;
   flex-direction: row;
   width: 100%;
