@@ -148,7 +148,7 @@ nav {
 }
 
 .conteudo_hero h2 {
-    font-family: "Press Start 2P", monospace;
+  font-family: "Press Start 2P", monospace;
   font-size: 24px;
   font-weight: normal;
   text-align: start;
@@ -268,8 +268,7 @@ nav {
 .texto_sobre p{
   color: var(--branco_gelo);
   font-weight: 400;
-  font-size: 16px;
-  font-family: "poppins", sans-serif;
+  font-size: 17px;
 }
 
 
@@ -290,64 +289,74 @@ nav {
 
 /* SEÇÃO PERSONAGENS */
 
-.personagens{
+.personagens {
   display: flex;
   flex-direction: column;
   position: relative;
-  height: 100%;
+  height: auto;
+  min-height: 100vh;
   width: 100%;
   justify-content: center;
   background-color: var(--azul_noite);
+  padding: 20px 0;
   gap: 10px;
 }
 
-.lutadores{
+.lutadores {
   display: flex;
   flex-direction: row;
-  padding: 30px 50px;
+  align-items: center;
+  padding: 10px 50px;
 }
 
-.lutadores img{
+.lutadores img {
   display: flex;
   border: solid var(--amarelo_claro);
-  width: 380px;               
-  height: 420px;              
+  width: 380px;
+  height: 420px;
   object-fit: contain;
   border-radius: 10px;
   box-shadow: 10px 10px var(--azul_escuro);
+  transition: all 0.3s ease-in-out;
 }
 
-.texto_personagens{
+.lutadores img:hover {
+  transform: scale(1.05);
+}
+
+.texto_personagens {
   display: flex;
   flex-direction: column;
-  gap: 50px;
-  padding: 50px 50px;
+  gap: 20px;
+  padding: 10px 50px;
 }
 
-.texto_personagens h2{
+.texto_personagens h2 {
   display: flex;
   color: var(--amarelo_claro);
   justify-content: center;
   font-size: 40px;
 }
 
-.texto_personagens p{
+.texto_personagens p {
   display: flex;
   color: var(--branco);
   letter-spacing: 2px;
   text-align: center;
   font-weight: 500;
-  font-family: "poppins", sans-serif;
+  font-size: 18px;
+  line-height: 1.4;
 }
 
-.icones{
+.icones {
   display: flex;
   flex-direction: row;
   gap: 40px;
   justify-content: center;
+  margin-top: 10px;
 }
 
-.icon{
+.icon {
   display: flex;
   border: solid var(--amarelo_claro);
   border-radius: 10px;
@@ -356,16 +365,91 @@ nav {
   transition: all 0.3s ease-in-out;
 }
 
-.icon:hover{
+.icon:hover {
   box-shadow: 10px 10px var(--azul_claro);
   border: solid var(--vermelho_luta);
 }
 
-.icon img{
+.icon img {
   width: 100px;
   cursor: pointer;
 }
 
-.icon img:hover{
+.icon img:hover {
   transform: scale(1.05);
+}
+
+
+/* SEÇÃO SOBRE MIM */
+
+.sobre_mim{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  background-color: var(--azul_noite);
+  justify-content: space-evenly;
+}
+
+.descricao{
+  display: flex;
+  flex-direction: column;
+  padding: 60px 60px;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+}
+
+.descricao h2{
+  font-size: 40px;
+  color: var(--amarelo_claro);
+}
+
+.descricao p{
+  font-size: 18px;
+  color: var(--branco);
+  max-width: 700px;
+  letter-spacing: 2px;
+}
+
+#classica_logo{
+  width: 140px;
+  align-items: center;
+}
+
+.autor{
+  display: flex;
+  flex-direction: column;
+  padding: 60px 60px;
+  gap: 20px;
+  align-items: center;
+}
+
+.autor h2{
+  font-size: 40px;
+  color: var(--amarelo_claro);
+}
+
+.autor p{
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--amarelo_claro);
+}
+
+#foto{
+  width: 380px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 50%;
+  border: solid var(--amarelo_claro);
+}
+
+.legenda{
+  display: flex;
+  flex-direction: row;
+}
+
+.legenda img{
+  width: 100%;
+  height: 40px;
 }
