@@ -25,7 +25,7 @@
                 <a href="#inicio">Início</a>
                 <a href="#sobre">Sobre</a>
                 <a href="#personagens">Personagens</a>
-                <a href="#adaptacoes">Adaptações</a>
+                <a href="#golpes">Golpes</a>
                 <a href="#sobre_mim">Sobre Mim</a>
                 <a href="login.html">
                     <button id="btn_login_menu">
@@ -234,14 +234,87 @@
 
         </div>
 
+        <div class="container_golpes" id="golpes">
+            <div class="golpes_titulo">
+                <h2>Golpes</h2>
+                <p>Escolha o lutador acima e conheça mais sobre suas técnicas especiais</p>
+                <div class="personagem">
+                    <button class="card_golpes" id="golpes_ryu">Ryu</button>
+                    <button class="card_golpes" id="golpes_ken">Ken</button>
+                    <button class="card_golpes" id="golpes_chunli">Chun-Li</button>
+                    <button class="card_golpes" id="golpes_guile">Guile</button>
+                    <button class="card_golpes" id="golpes_zangief">Zangief</button>
+                    <button class="card_golpes" id="golpes_honda">E.Honda</button>
+                    <button class="card_golpes" id="golpes_blanka">Blanka</button>
+                    <button class="card_golpes" id="golpes_dhalsim">Dhalsim</button>
+                </div>
+            </div>
+
+            <div class="items" id="lista_golpes">
+                <div class="cards">
+                    <div class="gif">
+                        <img id="hadoukenR" src="./assets/gifs/ryu-cfe-hadoblue.gif" alt="">
+                    </div>
+                    <div class="categoria_golpe">
+                        <p>PROJÉTIL</p>
+                    </div>
+                    <div class="nome_golpe">
+                        <p>Hadouken</p>
+                        <p id="descricao_golpe">Hadoken (波動拳, Hadōken , "Punho de Onda de Energia")
+                            básico é um soco potente no qual a força Ki do lutador é utilizada para
+                            concentrar energia nas palmas das mãos. Conforme as palmas são projetadas para
+                            fora em direção ao alvo, uma onda de energia é expelida, resultando em uma força de soco que
+                            viaja pelo ar na direção do oponente.</p>
+                    </div>
+                </div>
+
+                <div class="cards">
+                    <div class="gif">
+                        <img id="shoryukenR" src="./assets/gifs/ryu-cfe-shoryuken.gif" alt="">
+                    </div>
+                    <div class="categoria_golpe">
+                        <p>ANTI-AÉREO</p>
+                    </div>
+                    <div class="nome_golpe">
+                        <p>Shoryuken</p>
+                        <p id="descricao_golpe">Shoryuken (昇龍拳, Shōryūken,  "Punho do Dragão Ascendente")
+                            é um gancho potente no qual a força Ki do lutador é utilizada para concentrar
+                            energia em seu punho. Conforme o corpo é projetado para cima em um salto espiral em direção
+                            ao alvo, uma força vertical devastadora é expelida, resultando em um impacto ascendente que
+                            viaja pelo ar e rompe a defesa do oponente.</p>
+                    </div>
+                </div>
+
+                <div class="cards">
+                    <div class="gif">
+                        <img id="tatsumakiR" src="./assets/gifs/ryu-cvs-hurricane.gif" alt="">
+                    </div>
+                    <div class="categoria_golpe">
+                        <p>MOVIMENTO</p>
+                    </div>
+                    <div class="nome_golpe">
+                        <p>Tatsumaki Senpukyaku</p>
+                        <p id="descricao_golpe">Tatsumaki Senpukyaku (竜巻旋風脚, Tatsumaki Senpūkyaku, "Chute Furacão do
+                            Tornado") básico é um chute potente no qual a força Ki do lutador é utilizada para
+                            concentrar energia em suas pernas. Conforme o corpo é projetado para o ar em uma rotação
+                            veloz em direção ao alvo, uma sequência de golpes circulares é expelida, resultando em uma
+                            força de impacto contínua que viaja horizontalmente e atinge o oponente de múltiplos
+                            ângulos.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="container_sobre_mim" id="sobre_mim">
             <div class="descricao">
                 <h2>Minha relação com <img id="classica_logo" src="./assets/icon/street-classic_logo.png" alt=""></h2>
                 <p>A opção de seguir com um projeto individual de Street Fighter foi por uma série de razões
                     pessoais já que desde pequeno eu jogava os jogos da franquia com os meus parentes, especialmente
                     meu pai e tios. Eles também jogavam na infância e me ensinaram tudo o que sabiam para eu aprender.
-                    Com o passar do tempo, eu comecei a apreciar sua história e personagens, que apesar de não ter uma narrativa linear, contém o seu valor
-                    narrativo e grandes ensinamentos para a vida. Tanto é verdade que o meu personagem favorito é o Ryu onde eu destaco seu auto controle, equílibrio emocional,
+                    Com o passar do tempo, eu comecei a apreciar sua história e personagens, que apesar de não ter uma
+                    narrativa linear, contém o seu valor
+                    narrativo e grandes ensinamentos para a vida. Tanto é verdade que o meu personagem favorito é o Ryu
+                    onde eu destaco seu auto controle, equílibrio emocional,
                     resiliência e disciplina como inspirações que eu me identifico e tento aplicar na minha rotina.
                 </p>
             </div>
@@ -251,8 +324,16 @@
                 <img id="foto" src="./assets/icon/caique icon.jpg" alt="">
                 <p>Caíque Santos Tomochigue</p>
                 <div class="legenda">
-                    <a href="https://github.com/CaiqueSantosTomochigue"><img src="./assets/icon/github2s.png" alt=""></a>
-                    <a target="_blank" href="mailto:caique.tomochigue@sptech.school"><button>a</button></a>
+                    <a target="_blank" href="https://github.com/CaiqueSantosTomochigue"><img id="github"
+                            src="./assets/icon/github2s.png" alt=""></a>
+                    <a target="_blank" href="mailto:caique.tomochigue@sptech.school"><svg id="email"
+                            xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36">
+                            <path d="M0 0h36v36H0z" fill="none" />
+                            <path fill="#fff"
+                                d="M32 6H4a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h28a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2m-1.54 22H5.66l7-7.24l-1.44-1.39L4 26.84V9.52l12.43 12.37a2 2 0 0 0 2.82 0L32 9.21v17.5l-7.36-7.36l-1.41 1.41ZM5.31 8h25.07L17.84 20.47Z"
+                                class="clr-i-outline clr-i-outline-path-1" />
+                            <path fill="none" d="M0 0h36v36H0z" />
+                        </svg></a>
                 </div>
             </div>
         </div>
@@ -261,7 +342,8 @@
     <footer>
         <div class="container_rodape">
             <p id="direitos">
-                Street Fighter é uma marca registrada e de propriedade da CAPCOM. Este é um projeto acadêmico sem fins lucrativos.
+                Street Fighter é uma marca registrada e de propriedade da CAPCOM. Este é um projeto acadêmico sem fins
+                lucrativos.
             </p>
             <p id="creditos">
                 &copy; 2026 World Warriors. Desenvolvido por Caíque Santos Tomochigue.
