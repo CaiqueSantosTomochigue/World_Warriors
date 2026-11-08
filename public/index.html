@@ -239,69 +239,18 @@
                 <h2>Golpes</h2>
                 <p>Escolha o lutador acima e conheça mais sobre suas técnicas especiais</p>
                 <div class="personagem">
-                    <button class="card_golpes" id="golpes_ryu">Ryu</button>
-                    <button class="card_golpes" id="golpes_ken">Ken</button>
-                    <button class="card_golpes" id="golpes_chunli">Chun-Li</button>
-                    <button class="card_golpes" id="golpes_guile">Guile</button>
-                    <button class="card_golpes" id="golpes_zangief">Zangief</button>
-                    <button class="card_golpes" id="golpes_honda">E.Honda</button>
-                    <button class="card_golpes" id="golpes_blanka">Blanka</button>
-                    <button class="card_golpes" id="golpes_dhalsim">Dhalsim</button>
+                    <button class="card_golpes" onclick="mostrarGolpe()" id="golpes_ryu">Ryu</button>
+                    <button class="card_golpes" onclick="mostrarGolpe()" id="golpes_ken">Ken</button>
+                    <button class="card_golpes" onclick="mostrarGolpe()" id="golpes_chunli">Chun-Li</button>
+                    <button class="card_golpes" onclick="mostrarGolpe()" id="golpes_guile">Guile</button>
+                    <button class="card_golpes" onclick="mostrarGolpe()" id="golpes_zangief">Zangief</button>
+                    <button class="card_golpes" onclick="mostrarGolpe()" id="golpes_honda">E.Honda</button>
+                    <button class="card_golpes" onclick="mostrarGolpe()" id="golpes_blanka">Blanka</button>
+                    <button class="card_golpes" onclick="mostrarGolpe()" id="golpes_dhalsim">Dhalsim</button>
                 </div>
             </div>
 
             <div class="items" id="lista_golpes">
-                <div class="cards">
-                    <div class="gif">
-                        <img id="hadoukenR" src="./assets/gifs/ryu-cfe-hadoblue.gif" alt="">
-                    </div>
-                    <div class="categoria_golpe">
-                        <p>PROJÉTIL</p>
-                    </div>
-                    <div class="nome_golpe">
-                        <p>Hadouken</p>
-                        <p id="descricao_golpe">Hadoken (波動拳, Hadōken , "Punho de Onda de Energia")
-                            básico é um soco potente no qual a força Ki do lutador é utilizada para
-                            concentrar energia nas palmas das mãos. Conforme as palmas são projetadas para
-                            fora em direção ao alvo, uma onda de energia é expelida, resultando em uma força de soco que
-                            viaja pelo ar na direção do oponente.</p>
-                    </div>
-                </div>
-
-                <div class="cards">
-                    <div class="gif">
-                        <img id="shoryukenR" src="./assets/gifs/ryu-cfe-shoryuken.gif" alt="">
-                    </div>
-                    <div class="categoria_golpe">
-                        <p>ANTI-AÉREO</p>
-                    </div>
-                    <div class="nome_golpe">
-                        <p>Shoryuken</p>
-                        <p id="descricao_golpe">Shoryuken (昇龍拳, Shōryūken,  "Punho do Dragão Ascendente")
-                            é um gancho potente no qual a força Ki do lutador é utilizada para concentrar
-                            energia em seu punho. Conforme o corpo é projetado para cima em um salto espiral em direção
-                            ao alvo, uma força vertical devastadora é expelida, resultando em um impacto ascendente que
-                            viaja pelo ar e rompe a defesa do oponente.</p>
-                    </div>
-                </div>
-
-                <div class="cards">
-                    <div class="gif">
-                        <img id="tatsumakiR" src="./assets/gifs/ryu-cvs-hurricane.gif" alt="">
-                    </div>
-                    <div class="categoria_golpe">
-                        <p>MOVIMENTO</p>
-                    </div>
-                    <div class="nome_golpe">
-                        <p>Tatsumaki Senpukyaku</p>
-                        <p id="descricao_golpe">Tatsumaki Senpukyaku (竜巻旋風脚, Tatsumaki Senpūkyaku, "Chute Furacão do
-                            Tornado") básico é um chute potente no qual a força Ki do lutador é utilizada para
-                            concentrar energia em suas pernas. Conforme o corpo é projetado para o ar em uma rotação
-                            veloz em direção ao alvo, uma sequência de golpes circulares é expelida, resultando em uma
-                            força de impacto contínua que viaja horizontalmente e atinge o oponente de múltiplos
-                            ângulos.</p>
-                    </div>
-                </div>
             </div>
         </div>
 
@@ -352,6 +301,77 @@
     </footer>
 
     <script>
+        let lista = [
+            {
+                id: "golpes_ryu", nome: "Hadouken", categoria: "PROJÉTIL", gif: "./assets/gifs/ryu-cfe-hadoblue.gif", descricao: `Hadoken (波動拳, Hadōken , "Punho de Onda de Energia")
+                            básico é um soco potente no qual a força Ki do lutador é utilizada para
+                            concentrar energia nas palmas das mãos. Conforme as palmas são projetadas para
+                            fora em direção ao alvo, uma onda de energia é expelida, resultando em uma força de soco que
+                            viaja pelo ar na direção do oponente.`},
+
+            {
+                id: "golpes_ryu", nome: "Shoryuken", categoria: "ANTI-AÉREO", gif: "./assets/gifs/ryu-cfe-shoryuken.gif", descricao: `Shoryuken (昇龍拳, Shōryūken,  "Punho do Dragão Ascendente")
+                            é um gancho potente no qual a força Ki do lutador é utilizada para concentrar
+                            energia em seu punho. Conforme o corpo é projetado para cima em um salto espiral em direção
+                            ao alvo, uma força vertical devastadora é expelida, resultando em um impacto ascendente que
+                            viaja pelo ar e rompe a defesa do oponente.`},
+
+            {
+                id: "golpes_ryu", nome: "Tatsumaki Senpukyaku", categoria: "MOVIMENTO", gif: "./assets/gifs/ryu-cvs-hurricane.gif", descricao: `Tatsumaki Senpukyaku (竜巻旋風脚, Tatsumaki Senpūkyaku, "Chute Furacão do
+                            Tornado") básico é um chute potente no qual a força Ki do lutador é utilizada para
+                            concentrar energia em suas pernas. Conforme o corpo é projetado para o ar em uma rotação
+                            veloz em direção ao alvo, uma sequência de golpes circulares é expelida, resultando em uma
+                            força de impacto contínua que viaja horizontalmente e atinge o oponente de múltiplos
+                            ângulos.`},
+
+            {
+                id: "golpes_ken", nome: "Hadouken", categoria: "PROJÉTIL", gif: "./assets/gifs/ken-cvs-hadou1.gif", descricao: `Hadoken (波動拳, Hadōken , "Punho de Onda de Energia")
+                            básico é um soco potente no qual a força Ki do lutador é utilizada para
+                            concentrar energia nas palmas das mãos. Conforme as palmas são projetadas para
+                            fora em direção ao alvo, uma onda de energia é expelida, resultando em uma força de soco que
+                            viaja pelo ar na direção do oponente.`},
+
+            {
+                id: "golpes_ken", nome: "Shoryuken", categoria: "ANTI-AÉREO", gif: "./assets/gifs/ken-cvs-shoryu1.gif", descricao: `Shoryuken (昇龍拳, Shōryūken,  "Punho do Dragão Ascendente")
+                            é um gancho potente no qual a força Ki do lutador é utilizada para concentrar
+                            energia em seu punho. Conforme o corpo é projetado para cima em um salto espiral em direção
+                            ao alvo, uma força vertical devastadora é expelida, resultando em um impacto ascendente que
+                            viaja pelo ar e rompe a defesa do oponente.`},
+
+            {
+                id: "golpes_ken", nome: "Tatsumaki Senpukyaku", categoria: "MOVIMENTO", gif: "./assets/gifs/ken-hurricane-ts.gif", descricao: `Tatsumaki Senpukyaku (竜巻旋風脚, Tatsumaki Senpūkyaku, "Chute Furacão do
+                            Tornado") básico é um chute potente no qual a força Ki do lutador é utilizada para
+                            concentrar energia em suas pernas. Conforme o corpo é projetado para o ar em uma rotação
+                            veloz em direção ao alvo, uma sequência de golpes circulares é expelida, resultando em uma
+                            força de impacto contínua que viaja horizontalmente e atinge o oponente de múltiplos
+                            ângulos.`},
+        ]
+
+
+
+        function mostrarGolpe() {
+            let lutadorGolpe = event.target.id
+
+            lista_golpes.innerHTML = ""
+            for (let i = 0; i < lista.length; i++) {
+                if (lista[i].id == lutadorGolpe) {
+                    lista_golpes.innerHTML += `
+                        <div class="cards">
+                            <div class="gif">
+                                <img src="${lista[i].gif}" alt="${lista[i].nome}">
+                            </div>
+                            <div class="categoria_golpe">
+                                <p>${lista[i].categoria}</p>
+                            </div>
+                            <div class="nome_golpe">
+                                <p>${lista[i].nome}</p>
+                                <p id="descricao_golpe">${lista[i].descricao}</p>
+                            </div>
+                        </div>`
+                }
+            }
+        }
+
         function mostrar() {
             conteudo_ryu.style.display = "none";
             conteudo_ken.style.display = "none";
