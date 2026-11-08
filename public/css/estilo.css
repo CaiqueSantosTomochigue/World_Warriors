@@ -322,6 +322,7 @@ nav {
 
 .lutadores img:hover {
   transform: scale(1.05);
+  border: solid var(--vermelho_luta);
 }
 
 .texto_personagens {
@@ -442,6 +443,11 @@ nav {
   object-fit: cover;
   border-radius: 50%;
   border: solid var(--amarelo_claro);
+  transition: all 0.3s ease-in-out;
+}
+
+#foto:hover{
+  border: solid var(--vermelho_luta);
 }
 
 .legenda{
@@ -452,4 +458,33 @@ nav {
 .legenda img{
   width: 100%;
   height: 40px;
+  transition: all 0.3s ease-in-out;
+}
+
+.legenda img:hover{
+  transform: scale(1.05);
+}
+
+/* SEÇÃO RODAPÉ */
+
+.container_rodape{
+  display: flex;
+  background-color: var(--azul_noite);
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  border-top: solid var(--amarelo_claro);
+  padding: 20px 10px;
+}
+
+#direitos{
+  color: var(--branco_gelo);
+  font-weight: bold;
+  font-size: 14px;
+}
+
+#creditos{
+  color: var(--branco_gelo);
+  font-weight: bold;
+  font-size: 14px;
 }
