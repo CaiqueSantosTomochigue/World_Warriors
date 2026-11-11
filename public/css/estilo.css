@@ -79,7 +79,11 @@ nav {
   font-size: 18px;
   color: var(--branco_gelo);
   font-family: "Press Start 2P", monospace;
-  
+    transition: all 0.3s ease-in-out;
+}
+
+.itens_menu a:hover{
+  color: var(--amarelo_claro);
 }
 
 
@@ -100,8 +104,6 @@ nav {
 #btn_login_menu img {
   width: 15px;
 }
-
-
 
 /* SEÇÃO HERO */
 
@@ -398,7 +400,7 @@ nav {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 12px;
+  gap: 30px;
   padding: 12px;
 }
 
@@ -423,6 +425,13 @@ nav {
   display: flex;
   justify-content: center;
   transition: all 0.3s ease-in-out;
+  font-size: 20px;
+  align-items: center;
+}
+
+.personagem button:focus{
+  border-color: var(--vermelho_luta);
+  box-shadow: 8px 8px var(--azul_claro);
 }
 
 .personagem button:hover{
@@ -438,7 +447,7 @@ nav {
   border-radius: 6px;
   color: var(--branco);
   font-size: 15px;
-  width: 70px;
+  width: 100px;
   text-align: center;
 }
 
@@ -550,7 +559,7 @@ nav {
 .autor{
   display: flex;
   flex-direction: column;
-  padding: 60px 60px;
+  padding: 80px 80px;
   gap: 20px;
   align-items: center;
 }
