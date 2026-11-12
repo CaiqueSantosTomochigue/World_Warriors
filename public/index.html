@@ -292,161 +292,145 @@
         </div>
     </footer>
     <script>
-        let lista = [
-            {
-                id: "golpes_ryu", nome: "Hadouken", categoria: "PROJÉTIL", gif: "./assets/gifs/ryu-cfe-hadoblue.gif", descricao: `Hadoken (波動拳, Hadōken , "Punho de Onda de Energia")
+        let listaId = ["golpes_ryu", "golpes_ryu", "golpes_ryu", "golpes_ken", "golpes_ken", "golpes_ken", "golpes_chunli", "golpes_chunli", "golpes_chunli", "golpes_guile", "golpes_guile", "golpes_zangief", "golpes_zangief", "golpes_zangief", "golpes_honda", "golpes_honda", "golpes_honda", "golpes_blanka", "golpes_blanka", "golpes_dhalsim", "golpes_dhalsim"]
+        let listaNome = ["Hadouken", "Shoryuken", "Tatsumaki Senpukyaku", "Hadouken", "Shoryuken", "Tatsumaki Senpukyaku", "Hyakuretsukyaku", "Kikoken", "Spinning Bird Kick", "Sonic Boom", "Flash Kick", "Spinning Piledriver", "Double Lariat", "Banishing Flat", "Hundred Hand Slap", "Sumo Headbutt", "Sumo Smash", "Electric Thunder", "Rolling Attack", "Yoga Fire", "Yoga Flame"]
+        let listaCategoria = ["PROJÉTIL", "ANTI-AÉREO", "MOVIMENTO", "PROJÉTIL", "ANTI-AÉREO", "MOVIMENTO", "ATAQUE MÚLTIPLO", "PROJÉTIL", "MOVIMENTO", "PROJÉTIL", "ANTI-AÉREO", "AGARRÃO", "ATAQUE MÚLTIPLO", "ANTI-PROJÉTIL", "ATAQUE MÚLTIPLO", "MOVIMENTO", "MOVIMENTO", "ATAQUE MÚLTIPLO", "MOVIMENTO", "PROJÉTIL", "PROJÉTIL"]
+        let listaGifs = ["./assets/gifs/ryu-cfe-hadoblue.gif", "./assets/gifs/ryu-cfe-shoryuken.gif", "./assets/gifs/ryu-cvs-hurricane.gif", "./assets/gifs/ken-cvs-hadou1.gif", "./assets/gifs/ken-cvs-shoryu1.gif", "./assets/gifs/ken-hurricane-ts.gif", "./assets/gifs/chun-mvc-kicks.gif", "./assets/gifs/chun-mvc-hadoken.gif", "./assets/gifs/chunny-ts-birdkick.gif", "./assets/gifs/guile_sonicboom.gif", "./assets/gifs/Guile_flashkick.gif", "./assets/gifs/zangief-piledriver.gif", "./assets/gifs/zangief-lariat.gif", "./assets/gifs/zangief-fireballstop.gif", "./assets/gifs/ehonda-alpha-handslap.gif", "./assets/gifs/ehonda-headsmash-alpha.gif", "./assets/gifs/ehonda-risefall.gif", "./assets/gifs/blanka-electric.gif", "./assets/gifs/blanka-roll-alp.gif", "./assets/gifs/dhalsim-yogafire1a.gif", "./assets/gifs/dhalsim-sfa3-yoga-flame.gif"]
+        let listaDesc = [
+                            `Hadoken (波動拳, Hadōken , "Punho de Onda de Energia")
                             básico é um soco potente no qual a força Ki do lutador é utilizada para
                             concentrar energia nas palmas das mãos. Conforme as palmas são projetadas para
                             fora em direção ao alvo, uma onda de energia é expelida, resultando em uma força de soco que
-                            viaja pelo ar na direção do oponente.`},
+                            viaja pelo ar na direção do oponente.`,
 
-            {
-                id: "golpes_ryu", nome: "Shoryuken", categoria: "ANTI-AÉREO", gif: "./assets/gifs/ryu-cfe-shoryuken.gif", descricao: `Shoryuken (昇龍拳, Shōryūken,  "Punho do Dragão Ascendente")
+                            `Shoryuken (昇龍拳, Shōryūken,  "Punho do Dragão Ascendente")
                             é um gancho potente no qual a força Ki do lutador é utilizada para concentrar
                             energia em seu punho. Conforme o corpo é projetado para cima em um salto espiral em direção
                             ao alvo, uma força vertical devastadora é expelida, resultando em um impacto ascendente que
-                            viaja pelo ar e rompe a defesa do oponente.`},
+                            viaja pelo ar e rompe a defesa do oponente.`,
 
-            {
-                id: "golpes_ryu", nome: "Tatsumaki Senpukyaku", categoria: "MOVIMENTO", gif: "./assets/gifs/ryu-cvs-hurricane.gif", descricao: `Tatsumaki Senpukyaku (竜巻旋風脚, Tatsumaki Senpūkyaku, "Chute Furacão do
+                            `Tatsumaki Senpukyaku (竜巻旋風脚, Tatsumaki Senpūkyaku, "Chute Furacão do
                             Tornado") básico é um chute potente no qual a força Ki do lutador é utilizada para
                             concentrar energia em suas pernas. Conforme o corpo é projetado para o ar em uma rotação
                             veloz em direção ao alvo, uma sequência de golpes circulares é expelida, resultando em uma
                             força de impacto contínua que viaja horizontalmente e atinge o oponente de múltiplos
-                            ângulos.`},
+                            ângulos.`,
 
-            {
-                id: "golpes_ken", nome: "Hadouken", categoria: "PROJÉTIL", gif: "./assets/gifs/ken-cvs-hadou1.gif", descricao: `Hadoken (波動拳, Hadōken , "Punho de Onda de Energia")
+                            `Hadoken (波動拳, Hadōken , "Punho de Onda de Energia")
                             básico é um soco potente no qual a força Ki do lutador é utilizada para
                             concentrar energia nas palmas das mãos. Conforme as palmas são projetadas para
                             fora em direção ao alvo, uma onda de energia é expelida, resultando em uma força de soco que
-                            viaja pelo ar na direção do oponente.`},
+                            viaja pelo ar na direção do oponente.`,
 
-            {
-                id: "golpes_ken", nome: "Shoryuken", categoria: "ANTI-AÉREO", gif: "./assets/gifs/ken-cvs-shoryu1.gif", descricao: `Shoryuken (昇龍拳, Shōryūken,  "Punho do Dragão Ascendente")
+                            `Shoryuken (昇龍拳, Shōryūken,  "Punho do Dragão Ascendente")
                             é um gancho potente no qual a força Ki do lutador é utilizada para concentrar
                             energia em seu punho. Conforme o corpo é projetado para cima em um salto espiral em direção
                             ao alvo, uma força vertical devastadora é expelida, resultando em um impacto ascendente que
-                            viaja pelo ar e rompe a defesa do oponente.`},
+                            viaja pelo ar e rompe a defesa do oponente.`,
 
-            {
-                id: "golpes_ken", nome: "Tatsumaki Senpukyaku", categoria: "MOVIMENTO", gif: "./assets/gifs/ken-hurricane-ts.gif", descricao: `Tatsumaki Senpukyaku (竜巻旋風脚, Tatsumaki Senpūkyaku, "Chute Furacão do
+                            `Tatsumaki Senpukyaku (竜巻旋風脚, Tatsumaki Senpūkyaku, "Chute Furacão do
                             Tornado") básico é um chute potente no qual a força Ki do lutador é utilizada para
                             concentrar energia em suas pernas. Conforme o corpo é projetado para o ar em uma rotação
                             veloz em direção ao alvo, uma sequência de golpes circulares é expelida, resultando em uma
                             força de impacto contínua que viaja horizontalmente e atinge o oponente de múltiplos
-                            ângulos.`},
-            {
-                id: "golpes_chunli", nome: "Hyakuretsukyaku", categoria: "MOVIMENTO", gif: "./assets/gifs/chun-mvc-kicks.gif", descricao: `Hyakuretsukyaku (百裂脚, Hyakuretsukyaku, "Chute das Cem Rupturas")
+                            ângulos.`,
+
+                            `Hyakuretsukyaku (百裂脚, Hyakuretsukyaku, "Chute das Cem Rupturas")
                             é uma saraivada de chutes potente na qual a força Ki da lutadora é utilizada para
                             concentrar energia em suas pernas. Conforme o corpo se firma e as pernas são projetadas
                             para a frente em uma velocidade vertiginosa, uma rajada de chutes relâmpago é expelida,
                             resultando em uma sequência de impactos contínua que atinge o oponente repetidas vezes
-                            em questão de segundos.`},
- 
-            {
-                id: "golpes_chunli", nome: "Kikoken", categoria: "MOVIMENTO", gif: "./assets/gifs/chun-mvc-hadoken.gif", descricao: `Kikoken (気功拳, Kikōken, "Punho do Qigong")
+                            em questão de segundos.`,
+
+                            `Kikoken (気功拳, Kikōken, "Punho do Qigong")
                             é um golpe de projétil potente no qual a força Ki da lutadora é utilizada para
                             concentrar energia nas palmas das mãos. Conforme as palmas são projetadas para a frente
                             em direção ao alvo, uma esfera de energia é expelida, resultando em uma força de impacto
-                            que viaja pelo ar na direção do oponente.`},
- 
-            {
-                id: "golpes_chunli", nome: "Spinning Bird Kick", categoria: "MOVIMENTO", gif: "./assets/gifs/chunny-ts-birdkick.gif", descricao: `Spinning Bird Kick (スピニングバードキック, Supiningu Bādo Kikku, "Chute do Pássaro Giratório")
+                            que viaja pelo ar na direção do oponente.`,
+
+                            `Spinning Bird Kick (スピニングバードキック, Supiningu Bādo Kikku, "Chute do Pássaro Giratório")
                             é um chute giratório potente no qual a força Ki da lutadora é utilizada para
                             concentrar energia em suas pernas. Conforme o corpo é projetado para o alto, de cabeça
                             para baixo, com as pernas bem abertas em uma rotação veloz, uma série de chutes circulares
                             é expelida, resultando em uma força de impacto contínua que atinge o oponente repetidas
-                            vezes enquanto a lutadora avança pelo ar.`},
- 
-            {
-                id: "golpes_guile", nome: "Sonic Boom", categoria: "MOVIMENTO", gif: "./assets/gifs/guile_sonicboom.gif", descricao: `Sonic Boom (ソニックブーム, Sonikku Būmu, "Estrondo Sônico")
+                            vezes enquanto a lutadora avança pelo ar.`,
+
+                            `Sonic Boom (ソニックブーム, Sonikku Būmu, "Estrondo Sônico")
                             é um golpe de projétil potente no qual a força do lutador é utilizada para
                             concentrar energia nos braços, após um tempo de carga em postura defensiva. Conforme os
                             braços são lançados para a frente em um corte rápido, uma onda de choque cortante é
-                            expelida, resultando em uma força de impacto que viaja pelo ar na direção do oponente.`},
- 
-            {
-                id: "golpes_guile", nome: "Flash Kick", categoria: "MOVIMENTO", gif: "./assets/gifs/Guile_flashkick.gif", descricao: `Flash Kick (サマーソルトキック, Samāsoruto Kikku, "Chute de Salto Mortal")
+                            expelida, resultando em uma força de impacto que viaja pelo ar na direção do oponente.`,
+
+                            `Flash Kick (サマーソルトキック, Samāsoruto Kikku, "Chute de Salto Mortal")
                             é um chute ascendente potente no qual a força do lutador é utilizada para
                             concentrar energia em suas pernas, após um tempo de carga agachado. Conforme o corpo é
                             projetado para cima em um salto mortal para trás, um arco de chute devastador é expelido,
-                            resultando em um impacto ascendente que intercepta e rompe o ataque aéreo do oponente.`},
- 
-            {
-                id: "golpes_zangief", nome: "Spinning Piledriver", categoria: "MOVIMENTO", gif: "./assets/gifs/zangief-piledriver.gif", descricao: `Spinning Piledriver (スクリューパイルドライバー, Sukuryū Pairudoraibā, "Bate-Estaca em Parafuso")
+                            resultando em um impacto ascendente que intercepta e rompe o ataque aéreo do oponente.`,
+
+                            `Spinning Piledriver (スクリューパイルドライバー, Sukuryū Pairudoraibā, "Bate-Estaca em Parafuso")
                             é um golpe de agarrão potente no qual a força bruta do lutador é utilizada para
                             prender o oponente em seus braços. Conforme o corpo é projetado para o alto em uma rotação
                             veloz, como a de uma hélice, com o adversário de cabeça para baixo, uma força de queda
                             devastadora é expelida, resultando em um impacto violento que arremessa o oponente de
-                            costas contra o chão.`},
- 
-            {
-                id: "golpes_zangief", nome: "Double Lariat", categoria: "MOVIMENTO", gif: "./assets/gifs/zangief-lariat.gif", descricao: `Double Lariat (ダブルラリアット, Daburu Rariatto, "Laço Duplo")
+                            costas contra o chão.`,
+
+                            `Double Lariat (ダブルラリアット, Daburu Rariatto, "Laço Duplo")
                             é um giro potente no qual a força bruta do lutador é utilizada para sustentar os
                             braços estendidos. Conforme o corpo gira como um pião com os punhos abertos para os lados,
                             uma sequência de golpes circulares é expelida, resultando em uma força de impacto contínua
-                            que atinge o oponente de todos os lados.`},
- 
-            {
-                id: "golpes_zangief", nome: "Banishing Flat", categoria: "MOVIMENTO", gif: "./assets/gifs/zangief-fireballstop.gif", descricao: `Banishing Flat (バニシングフラット, Banishingu Furatto, "Palma Banidora")
+                            que atinge o oponente de todos os lados.`,
+
+                            `Banishing Flat (バニシングフラット, Banishingu Furatto, "Palma Banidora")
                             é um golpe de avanço potente no qual a força bruta do lutador é utilizada para
                             proteger o corpo atrás de uma das mãos. Conforme o corpo desliza para a frente com a palma
                             espalmada, uma barreira de impacto é projetada em direção ao alvo, resultando em um golpe
-                            que dissipa os projéteis do oponente e abre caminho para o ataque.`},
- 
-            {
-                id: "golpes_honda", nome: "Hundred Hand Slap", categoria: "MOVIMENTO", gif: "./assets/gifs/ehonda-alpha-handslap.gif", descricao: `Hundred Hand Slap (百裂張り手, Hyakuretsu Harite, "Tapas das Cem Rupturas")
+                            que dissipa os projéteis do oponente e abre caminho para o ataque.`,
+
+                            `Hundred Hand Slap (百裂張り手, Hyakuretsu Harite, "Tapas das Cem Rupturas")
                             é uma saraivada de tapas potente na qual a força do lutador é utilizada para
                             concentrar energia nas palmas das mãos. Conforme as palmas são projetadas para a frente
                             repetidamente em uma velocidade impressionante, uma sequência de golpes de sumô é
                             expelida, resultando em uma rajada de impactos contínua que atinge o oponente várias
-                            vezes seguidas.`},
- 
-            {
-                id: "golpes_honda", nome: "Sumo Headbutt", categoria: "MOVIMENTO", gif: "./assets/gifs/ehonda-headsmash-alpha.gif", descricao: `Sumo Headbutt (スーパー頭突き, Sūpā Zutsuki, "Super Cabeçada")
+                            vezes seguidas.`,
+
+                            `Sumo Headbutt (スーパー頭突き, Sūpā Zutsuki, "Super Cabeçada")
                             é uma cabeçada voadora potente na qual a força do lutador é utilizada para
                             concentrar energia na cabeça e no corpo, após um tempo de carga. Conforme o corpo é
                             projetado horizontalmente para a frente, de cabeça, em direção ao alvo, uma força de
                             colisão devastadora é expelida, resultando em um impacto que atravessa o ar e atinge o
-                            oponente de frente.`},
- 
-            {
-                id: "golpes_honda", nome: "Sumo Smash", categoria: "MOVIMENTO", gif: "./assets/gifs/ehonda-risefall.gif", descricao: `Sumo Smash (スーパー百貫落とし, Sūpā Hyakkan Otoshi, "Super Queda de Cem Kan")
+                            oponente de frente.`,
+
+                            `Sumo Smash (スーパー百貫落とし, Sūpā Hyakkan Otoshi, "Super Queda de Cem Kan")
                             é um golpe aéreo potente no qual a força do lutador é utilizada para concentrar todo
                             o seu peso no quadril. Conforme o corpo é projetado para o alto em um salto vertical e
                             despenca em direção ao alvo, com o quadril à frente, uma força de esmagamento devastadora
-                            é expelida, resultando em um impacto descendente que atinge o oponente por cima.`},
- 
-            {
-                id: "golpes_blanka", nome: "Electric Thunder", categoria: "MOVIMENTO", gif: "./assets/gifs/blanka-electric.gif", descricao: `Electric Thunder (エレクトリックサンダー, Erekutorikku Sandā, "Trovão Elétrico")
+                            é expelida, resultando em um impacto descendente que atinge o oponente por cima.`,
+
+                            `Electric Thunder (エレクトリックサンダー, Erekutorikku Sandā, "Trovão Elétrico")
                             é uma descarga elétrica potente na qual a força do lutador é utilizada para
                             concentrar eletricidade em todo o corpo. Conforme o corpo é envolvido por faíscas e raios,
                             uma descarga de choques é expelida em todas as direções ao redor, resultando em uma
-                            barreira elétrica contínua que fere quem estiver por perto.`},
- 
-            {
-                id: "golpes_blanka", nome: "Rolling Attack", categoria: "MOVIMENTO", gif: "./assets/gifs/blanka-roll-alp.gif", descricao: `Rolling Attack (ローリングアタック, Rōringu Atakku, "Ataque Rolante")
+                            barreira elétrica contínua que fere quem estiver por perto.`,
+
+                            `Rolling Attack (ローリングアタック, Rōringu Atakku, "Ataque Rolante")
                             é uma investida giratória potente na qual a força do lutador é utilizada para
                             enrolar o corpo em formato de bola. Conforme o corpo é projetado para a frente em uma
                             rotação veloz em direção ao alvo, uma força de colisão giratória é expelida, resultando
-                            em um impacto contínuo que cruza o cenário e atinge o oponente com todo o peso do corpo.`},
- 
-            {
-                id: "golpes_dhalsim", nome: "Yoga Fire", categoria: "MOVIMENTO", gif: "./assets/gifs/dhalsim-yogafire1a.gif", descricao: `Yoga Fire (ヨガファイア, Yoga Faiya, "Fogo da Yoga")
+                            em um impacto contínuo que cruza o cenário e atinge o oponente com todo o peso do corpo.`,
+
+                            `Yoga Fire (ヨガファイア, Yoga Faiya, "Fogo da Yoga")
                             é uma bola de fogo potente na qual a força Ki do lutador é utilizada para
                             concentrar chamas em sua respiração. Conforme o ar é inspirado profundamente e soprado
                             pela boca em direção ao alvo, uma esfera de fogo é expelida, resultando em uma chama
-                            que viaja pelo ar na direção do oponente.`},
- 
-            {
-                id: "golpes_dhalsim", nome: "Yoga Flame", categoria: "MOVIMENTO", gif: "./assets/gifs/dhalsim-sfa3-yoga-flame.gif", descricao: `Yoga Flame (ヨガフレイム, Yoga Fureimu, "Chama da Yoga")
+                            que viaja pelo ar na direção do oponente.`,
+
+                            `Yoga Flame (ヨガフレイム, Yoga Fureimu, "Chama da Yoga")
                             é uma baforada de fogo potente na qual a força Ki do lutador é utilizada para
                             concentrar chamas em sua respiração. Conforme o ar é soprado de forma prolongada pela
                             boca à sua frente, uma cortina de chamas é expelida, resultando em uma nuvem de fogo
                             densa e de curto alcance que queima o oponente e protege o lutador de ataques que se
-                            aproximam.`},
-        ]
+                            aproximam.`
+                        ]
 
 
 
@@ -454,19 +438,19 @@
             let lutadorGolpe = event.target.id
 
             lista_golpes.innerHTML = ""
-            for (let i = 0; i < lista.length; i++) {
-                if (lista[i].id == lutadorGolpe) {
+            for (let i = 0; i < listaId.length; i++) {
+                if (listaId[i] == lutadorGolpe) {
                     lista_golpes.innerHTML += `
                         <div class="cards">
                             <div class="gif">
-                                <img src="${lista[i].gif}" alt="${lista[i].nome}">
+                                <img src="${listaGifs[i]}" alt="${listaNome[i]}">
                             </div>
                             <div class="categoria_golpe">
-                                <p>${lista[i].categoria}</p>
+                                <p>${listaCategoria[i]}</p>
                             </div>
                             <div class="nome_golpe">
-                                <p>${lista[i].nome}</p>
-                                <p id="descricao_golpe">${lista[i].descricao}</p>
+                                <p>${listaNome[i]}</p>
+                                <p id="descricao_golpe">${listaDesc[i]}</p>
                             </div>
                         </div>`
                 }
