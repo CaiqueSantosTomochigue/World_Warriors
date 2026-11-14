@@ -2,83 +2,68 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>AquaTech | Login</title>
+  <title>World Warriors | Login</title>
 
-    <script src="./js/sessao.js"></script>
+  <script src="./js/sessao.js"></script>
 
-    <link rel="stylesheet" href="./css/estilo.css">
-    <link rel="icon" href="./assets/icon/favicon2.ico">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="stylesheet" href="./css/estilo.css" />
+  <link rel="icon" href="./assets/icon/img_logo.png" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
 </head>
 
-<body>
+<body id="body_cadastro_login" onload="listar()">
+  <header>
+    <nav class="nav_cadastro_login">
+      <a href="./index.html">
+        <img src="./assets/icon/img_logo.png" alt="logo_header" id="img_logo_menu" />
+      </a>
+      <div class="itens_menu">
+        <a href="./index.html">Página Inicial</a>
+        <a href="./cadastro.html">
+          <button id="btn_login_menu">
+            <img src="./assets/icon/cadastro_icon.svg" alt="">
+            Cadastro
+          </button>
+        </a>
+      </div>
+    </nav>
+  </header>
 
-    <!--Header-->
-
-    <div class="header">
-        <div class="container">
-            <h1 class="titulo">AquaTech</h1>
-            <ul class="navbar">
-                <li>
-                    <a href="index.html">Inicial</a>
-                </li>
-                <li>
-                    <a href="simulador.html">Simulador</a>
-                </li>
-                <li>|</li>
-                <li class="agora">
-                    <a href="#">Login</a>
-                </li>
-                <li>
-                    <a href="cadastro.html">Cadastro</a>
-                </li>
-            </ul>
+  <main>
+    <div class="container_cadastro_login">
+      <div class="cards_cadastro_login">
+        <div class="categoria_card">
+          <p>ACESSO</p>
         </div>
+        <div class="titulo_card">
+          <h2>Entrar</h2>
+          <p>Utilize o email e senha cadastrados</p>
+        </div>
+
+        <div class="campos_card">
+          <div class="campo">
+            <p>E-mail:</p>
+            <input class="input" id="ipt_email" placeholder="email@.com">
+          </div>
+
+
+          <div class="campo">
+            <p>Senha:</p>
+            <input type="password" class="input" id="ipt_senha" placeholder="Crie uma senha">
+          </div>
+
+          <div class="btn_cadastro_login">
+            <button onclick="entrar()">Entrar</button>
+          </div>
+        </div>
+      </div>
+
     </div>
-
-
-    <div class="login">
-        <div class="alerta_erro">
-            <div class="card_erro" id="cardErro">
-                <span id="mensagem_erro"></span>
-            </div>
-        </div>
-        <div class="container">
-            <div class="card card-login">
-                <h2>Olá de volta!</h2>
-                <div class="formulario">
-                    <div class="campo">
-                        <span>E-mail:</span>
-                        <input id="email_input" type="text" placeholder="Login">
-                    </div>
-                    <div class="campo">
-                        <span>Senha:</span>
-                        <input id="senha_input" type="password" placeholder="******">
-                    </div>
-                    <button class="botao" onclick="entrar()">Entrar</button>
-                </div>
-
-                <div id="div_aguardar" class="loading-div">
-                    <img src="./assets/circle-loading.gif" id="loading-gif">
-                </div>
-
-                <div id="div_erros_login"></div>
-            </div>
-        </div>
-    </div>
-
-    <!--footer inicio-->
-    <div class="footer">
-        <div class="container">
-            <h4>Feito com amor por aluno &hearts; SPTech &copy; 2023-2026</h4>
-        </div>
-    </div>
-    <!--footer fim-->
-
+  </main>
 </body>
 
 </html>
@@ -89,8 +74,8 @@
     function entrar() {
         aguardar();
 
-        var emailVar = email_input.value;
-        var senhaVar = senha_input.value;
+        var emailVar = ipt_email.value;
+        var senhaVar = ipt_senha.value;
 
         if (emailVar == "" || senhaVar == "") {
             cardErro.style.display = "block"

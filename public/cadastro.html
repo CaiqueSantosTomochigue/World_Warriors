@@ -6,91 +6,74 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>AquaTech | Cadastro</title>
+  <title>World Warriors | Cadastro</title>
 
   <script src="./js/sessao.js"></script>
 
   <link rel="stylesheet" href="./css/estilo.css" />
-  <link rel="icon" href="./assets/icon/favicon2.ico" />
+  <link rel="icon" href="./assets/icon/img_logo.png" />
   <link rel="preconnect" href="https://fonts.gstatic.com" />
 </head>
 
-<body onload="listar()">
-  <!--header inicio-->
-  <div class="header">
-    <div class="container">
-      <h1 class="titulo">AquaTech</h1>
-      <ul class="navbar">
-        <li>
-          <a href="index.html">Inicial</a>
-        </li>
-        <li>
-          <a href="simulador.html">Simulador</a>
-        </li>
-        <li>|</li>
-        <li>
-          <a href="login.html">Login</a>
-        </li>
-        <li class="agora">
-          <a href="#">Cadastro</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-  <!--header fim-->
-
-  <div class="login">
-    <div class="alerta_erro">
-      <div class="card_erro" id="cardErro">
-        <span id="mensagem_erro"></span>
+<body id="body_cadastro_login" onload="listar()">
+  <header>
+    <nav class="nav_cadastro_login">
+      <a href="./index.html">
+        <img src="./assets/icon/img_logo.png" alt="logo_header" id="img_logo_menu" />
+      </a>
+      <div class="itens_menu">
+        <a href="./index.html">Página Inicial</a>
+        <a href="./login.html">
+          <button id="btn_login_menu">
+            <img src="./assets/icon/login_icon.svg" alt="" />
+            Login
+          </button>
+        </a>
       </div>
-    </div>
-    <div class="container">
-      <div class="card card-cadastro">
-        <h2>Bem-vindo!</h2>
-        <div class="formulario">
-          <!--
-                         Para inserir mais um campo, copie uma das inputs abaixo.
-                         Assim que inserir vá para o script abaixo.
-                     -->
-          <div class="campo">
-            <span>Código de ativação:</span>
-            <input id="codigo_input" type="text" placeholder="Insira aqui seu código" />
-          </div>
-          <div class="campo">
-            <span>Nome:</span>
-            <input id="nome_input" type="text" placeholder="Seu nome" />
-          </div>
-          <div class="campo">
-            <span>E-mail:</span>
-            <input id="email_input" type="text" placeholder="meuemail@provedor.com" />
-          </div>
-          <div class="campo">
-            <span>Senha:</span>
-            <input id="senha_input" type="password" placeholder="******" />
-          </div>
-          <div class="campo">
-            <span>Confirmação da Senha:</span>
-            <input id="confirmacao_senha_input" type="password" placeholder="******" />
-          </div>
-          <button class="botao" onclick="cadastrar()">Cadastrar</button>
+    </nav>
+  </header>
+
+  <main>
+    <div class="container_cadastro_login">
+      <div class="cards_cadastro_login">
+        <div class="categoria_card">
+          <p>ACESSO</p>
         </div>
-        <div id="div_aguardar" class="loading-div">
-          <img src="./assets/circle-loading.gif" id="loading-gif" />
+        <div class="titulo_card">
+          <h2>Criar conta</h2>
+          <p>Preencha os dados abaixo para o cadastro</p>
         </div>
 
-        <div id="div_erros_login"></div>
-      </div>
-    </div>
-  </div>
+        <div class="campos_card">
+          <div class="campo">
+            <p>Nome:</p>
+            <input class="input" id="ipt_nome" placeholder="Seu nome completo">
+          </div>
 
-  <!--footer inicio-->
-  <div class="footer">
-    <div class="container">
-      <h4>Feito com amor por aluno &hearts; SPTech &copy; 2023-2026</h4>
+          <div class="campo">
+            <p>E-mail:</p>
+            <input class="input" id="ipt_email" placeholder="email@.com">
+          </div>
+
+
+          <div class="campo">
+            <p>Senha:</p>
+            <input type="password" class="input" id="ipt_senha" placeholder="Crie uma senha">
+          </div>
+
+          <div class="campo">
+            <p>Confirmação da Senha:</p>
+            <input type="password" class="input" id="ipt_confirmacao_senha" placeholder="Repita a senha">
+          </div>
+
+          <div class="btn_cadastro_login">
+            <button onclick="cadastrar()">Criar Conta</button>
+          </div>
+        </div>
+      </div>
+
     </div>
-  </div>
-  <!--footer fim-->
+  </main>
 </body>
 
 </html>
@@ -105,10 +88,10 @@
 
     //Recupere o valor da nova input pelo nome do id
     // Agora vá para o método fetch logo abaixo
-    var nomeVar = nome_input.value;
-    var emailVar = email_input.value;
-    var senhaVar = senha_input.value;
-    var confirmacaoSenhaVar = confirmacao_senha_input.value;
+    var nomeVar = ipt_nome.value;
+    var emailVar = ipt_email.value;
+    var senhaVar = ipt_senha.value;
+    var confirmacaoSenhaVar = ipt_confirmacao_senha.value;
     var codigoVar = codigo_input.value;
     var idEmpresaVincular
 
