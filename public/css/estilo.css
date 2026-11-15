@@ -772,6 +772,39 @@ nav {
   cursor: pointer;
 }
 
+.alerta_erro{
+  z-index: 100;
+  background-color: var(--azul_noite);
+  color: var(--branco);
+  border: 2px solid var(--amarelo_claro);
+  font-size: 2rem;
+  position: fixed;
+  height: 400px;
+  width: 50vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  display: none;
+}
 
+.btn_fechar_card{
+  border-radius: 100%;
+  width: 50px;
+  height: 50px;
+  font-size: 1.3rem;
+  position: fixed;
+  top: 30
+  vh;
+  right: 26vw;
+  color: var(--branco);
+  background-color: var(--vermelho_luta);
+  border: 1.6px solid var(--amarelo_claro);
+  transition: all 0.2s ease-in-out;
+  &:hover{
+    transform: scale(1.1);
+    rotate: 180deg;
+  }
+}
 
 
