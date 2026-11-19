@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <link rel="shortcut icon" href="../assets/icon/favicon2.ico" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World Warriors | Personagens</title>
+
+
+    <link rel="stylesheet" href="./../css/dashboards.css">
+    <link rel="stylesheet" href="./../css/estilo.css" />
+
+    <script src="../js/sessao.js"></script>
+    <script src="../js/alerta.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+</head>
+
+<!-- <body onload="validarSessao(), exibirAquarios(),  atualizacaoPeriodica()"> -->
+
+<body>
+
+    <div class="janela">
+
+        <div class="header-left">
+            <div class="titulo">
+                <img src="../assets/icon/img_logo.png" alt="">
+                <h1>World Warriors</h1>
+            </div>
+
+
+            <div class="hello">
+                <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
+            </div>
+
+            <div class="btn-nav" id="ativo">
+                <a href="./cards.html">
+                    <h3>Personagens</h3>
+                </a>
+            </div>
+
+
+            <div class="btn-nav-white">
+                <a href="./mural.html">
+                    <h3>Avaliação</h3>
+                </a>
+            </div>
+
+            <div class="btn-nav-white">
+
+                <h3>Dashboard</h3>
+
+            </div>
+
+            <div class="btn-logout" onclick="limparSessao()">
+                <img src="../assets/icon/icon_log_out.svg" alt="">
+                <h3>Sair</h3>
+            </div>
+
+        </div>
+
+        <div class="seletor_personagem">
+            <div class="caixa_seletora">
+                <div class="titulo_personagem">
+                    <h2>ESCOLHA SEU LUTADOR</h2>
+                    <p>Quem é o seu favorito de Street Fighter II?</p>
+                </div>
+
+                <div class="card_selecionado">
+                    <img id="img_previa" src="../assets/imgs/selecionado_random.png" alt="">
+                    <div class="card_info">
+                        <h2 id="nome_previa">SELECIONE</h2>
+                        <p id="texto_previa">Clique em um dos 8 lutadores ao lado.</p>
+                    </div>
+
+                    <div class="btn_escolha" onclick="confirmarEscolha()">
+                        <p>CONFIRMAR ESCOLHA</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="grid">
+
+                <div class="opcoes_personagem1">
+
+                    <button class="lutador" id="1" onclick="selecionar(1)">
+                        <img src="../assets/fighters/ryu-s4-removebg-preview.png">
+                        <span>Ryu</span>
+                    </button>
+
+                    <button class="lutador" id="2" onclick="selecionar(2)">
+                        <img src="../assets/fighters/ken-removebg-preview.png">
+                        <span>Ken</span>
+                    </button>
+
+                    <button class="lutador" id="3" onclick="selecionar(3)">
+                        <img src="../assets/fighters/chunli-s4-removebg-preview.png">
+                        <span>Chun-Li</span>
+                    </button>
+
+                    <button class="lutador" id="4" onclick="selecionar(4)">
+                        <img src="../assets/fighters/guile-s4-removebg-preview.png">
+                        <span>Guile</span>
+                    </button>
+
+                </div>
+
+                <div class="opcoes_personagem2">
+
+                    <button class="lutador" id="7" onclick="selecionar(7)">
+                        <img src="../assets/fighters/blanka-sfiv-select-removebg-preview.png">
+                        <span>Blanka</span>
+                    </button>
+
+                    <button class="lutador" id="6" onclick="selecionar(6)">
+                        <img src="../assets/fighters/honda-s4-removebg-preview.png">
+                        <span>E. Honda</span>
+                    </button>
+
+                    <button class="lutador" id="5" onclick="selecionar(5)">
+                        <img src="../assets/fighters/zangief-s4-removebg-preview.png">
+                        <span>Zangief</span>
+                    </button>
+
+                    <button class="lutador" id="8" onclick="selecionar(8)">
+                        <img src="../assets/fighters/dhalsim-s4-removebg-preview.png">
+                        <span>Dhalsim</span>
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+    </div>
+
+</body>
+
+<script>
+    
+</script>
+
+</html>
