@@ -38,21 +38,21 @@
             </div>
 
             <div class="btn-nav" id="ativo">
-                <a href="./cards.html">
+                <a href="./personagens.html">
                     <h3>Personagens</h3>
                 </a>
             </div>
 
 
             <div class="btn-nav-white">
-                <a href="./mural.html">
+                <a href="./avaliacao.html">
                     <h3>Avaliação</h3>
                 </a>
             </div>
 
             <div class="btn-nav-white">
 
-                <h3>Dashboard</h3>
+                <a href="./dashboard.html"><h3>Dashboard</h3></a>
 
             </div>
 
@@ -70,7 +70,7 @@
                     <p>Quem é o seu favorito de Street Fighter II?</p>
                 </div>
 
-                <div class="card_selecionado">
+                <div id="card_selecionado" class="card_selecionado">
                     <img id="img_previa" src="../assets/imgs/selecionado_random.png" alt="">
                     <div class="card_info">
                         <h2 id="nome_previa">SELECIONE</h2>
@@ -137,15 +137,56 @@
             </div>
 
         </div>
-
-
-
     </div>
 
 </body>
 
 <script>
-    
+    let idPersonagem = 0
+
+    let listaImg = [
+        "../assets/fighters/ryu-s4-removebg-preview.png",
+        "../assets/fighters/ken-removebg-preview.png",
+        "../assets/fighters/chunli-s4-removebg-preview.png",
+        "../assets/fighters/guile-s4-removebg-preview.png",
+        "../assets/fighters/zangief-s4-removebg-preview.png",
+        "../assets/fighters/honda-s4-removebg-preview.png",
+        "../assets/fighters/blanka-sfiv-select-removebg-preview.png",
+        "../assets/fighters/dhalsim-s4-removebg-preview.png"
+    ]
+
+    let listaNome = ["RYU", "KEN", "CHUN-LI", "GUILE", "ZANGIEF", "E. HONDA", "BLANKA", "DHALSIM"]
+
+    let listaTexto = [
+        "Lutador japonês que viaja o mundo em busca da verdadeira força. Mestre do Hadouken.",
+        "Norte-americano, amigo e rival de Ryu. Luta com estilo, velocidade e muita energia.",
+        "Investigadora chinesa da Interpol em busca de vingança. Famosa pela velocidade dos chutes.",
+        "Major da Força Aérea dos EUA que luta para vingar seu amigo Charlie. Dono do Sonic Boom.",
+        "O Ciclone Vermelho, lutador soviético de luta livre. Mestre dos agarrões, como o Spinning Piledriver.",
+        "Lutador de sumô japonês que quer mostrar ao mundo a força do sumô. Famoso pelos tapas rápidos.",
+        "Criatura selvagem criada na selva amazônica, no Brasil. Ataca com rolamentos e descargas elétricas.",
+        "Mestre de yoga indiano que luta para ajudar sua aldeia. Estica os membros para atacar de longe."
+    ]
+
+    function selecionar(id) {
+        idPersonagem = id
+
+        for (let i = 0; i < 8; i++) {
+            if (idPersonagem == i + 1) {
+                img_previa.src = listaImg[i]
+                nome_previa.innerHTML = listaNome[i]
+                texto_previa.innerHTML = listaTexto[i]
+            }
+        }
+    }
+
+    function confirmarEscolha() {
+        if (idPersonagem == 0) {
+            alert("Selecione um lutador antes de confirmar!")
+        } else {
+            console.log(idPersonagem)
+        }
+    }
 </script>
 
 </html>
