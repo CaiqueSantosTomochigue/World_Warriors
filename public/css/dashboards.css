@@ -1,11 +1,37 @@
 /* pagina mural */
 
 @import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Russo+One&display=swap');
+
+:root {
+  --branco: #FAFCFB;
+  --branco_gelo: #E9EBF5;
+  --amarelo_claro: #FFD700;
+  --amarelo_escuro: #D4AF37;
+  --azul_claro: #4A58A2;
+  --azul_escuro: #2B3B92;
+  --preto: #1C1C1C;
+
+  --vermelho_luta: #D7261E;
+  --vermelho_vida: #5A0F0F;
+  --azul_noite: #0A1030;
+  --azul_escuro_transparente: #2B3B92B3;
+  --preto-sombra: #00000066;
+  --preto_80: #000000CC; /* 80% de opacidade */
+  --cinza_50: #5D5D5DCC;
+  --cinza: #8A96BA;
+  --branco_translucido: #FAFCFB40;
+  --azul_marinho: #141D48;
+
+
+  --fonte-texto: "Poppins", sans-serif;
+  --fonte-arcade: "Press Start 2P", monospace;
+  --fonte-destaque: "Russo One", "Poppins", sans-serif;
+}
 
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Barlow', 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .label-captura {
@@ -120,9 +146,10 @@ body {
   position: relative;
   top: 0;
   left: 20%;
-  background-color: #161618;
+  background-color: var(--azul_noite);
   height: 100vh;
   overflow: auto;
+  padding: 30px 30px;
 }
 
 .area-parametros-alerta {
@@ -345,10 +372,11 @@ canvas {
   width: 20%;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  gap: 50px;
   align-items: center;
-  border-right: 3px solid #32b9cd;
-  background-color: #212124;
+  border-right: 3px solid var(--amarelo_claro);
+  background-color: var(--azul_noite);
+  padding-top: 65px;
 }
 
 .dash-right {
@@ -364,7 +392,8 @@ canvas {
 }
 
 .header-left h1 {
-  color: #32b9cd;
+  color: var(--amarelo_claro);
+  font-family: var(--fonte-destaque);
 }
 
 .hello {
@@ -374,54 +403,194 @@ canvas {
 }
 
 .hello h3 {
-  color: #e3b062;
+  color: var(--branco);
   font-weight: 300;
   font-size: 1.2rem;
 }
 
 .hello h3 span {
   font-weight: 800;
+  color: var(--amarelo_claro);
 }
 
 .btn-nav {
   width: 40%;
   color: white;
-  background-color: #e6005a;
+  background-color: var(--amarelo_claro);
   border-radius: 5px;
   text-align: center;
+  justify-content: center;
   padding: 2% 5%;
+  align-items: center;
+  padding: 10px 10px;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-nav h3{
+  color: var(--azul_noite);
+}
+
+.btn-nav:hover{
+  transform: scale(1.1);
+  cursor: pointer;
 }
 
 .btn-nav-white {
+  display: flex;
   width: 40%;
-  background-color: white;
-  border: 3px solid #e6005a;
+  background-color: var(--azul_marinho);
+  border: 3px solid var(--amarelo_claro);
   border-radius: 5px;
   text-align: center;
-  padding: 2% 5%;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 10px;
+  transition: all 0.3s ease-in-out;
 }
 
 .btn-nav-white h3 {
-  color: #e6005a;
-  padding: 0;
-  margin: 0;
+  color: var(--branco);
 }
 
-.btn-nav h3,
-.btn-logout h3 {
-  margin: 0;
-  padding: 0;
+.btn-nav-white:hover{
+  transform: scale(1.1);
+  cursor: pointer;
+}
+.btn-nav,
+.btn-nav-white {
+  width: 200px
+}
+
+.btn-logout h3{
+  font-size: 15px;
 }
 
 .btn-logout {
+  display: flex;
+  flex-direction: row;
   margin: 0;
   padding: 0;
   width: 20%;
-  background-color: #32b9cd;
   color: white;
   border-radius: 10px;
   text-align: center;
   padding: 10px 15px;
-  margin-bottom: 100px;
+  margin-right: 250px;
   cursor: pointer;
+  gap: 10px;
+  transition: all 0.3s ease-in-out;
+  margin-top: 60px;
+}
+
+.btn-logout:hover{
+  display: flex;
+  transform: scale(0.9);
+}
+
+.titulo{
+  display: flex;
+  flex-direction: column !important;
+}
+
+.titulo img{
+  display: flex;
+  width: 50px;
+  height: 50px;
+}
+
+.titulo_dashboard{
+  display: flex;
+  flex-direction: column;
+  padding: 30px 30px;
+  gap: 5px;
+}
+
+.titulo_dashboard h2{
+  font-family: "Press Start 2P", monospace;
+  color: var(--branco_gelo);
+}
+
+.titulo_dashboard p{
+  color: var(--cinza);
+  font-size: 12px;
+  font-family: var(--fonte-texto);
+}
+
+.indicadores{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.cards_indi{
+  display: flex;
+  flex-direction: column;
+  border: solid 2px var(--azul_claro);
+  border-top: solid 2px var(--amarelo_claro);
+  background-color: var(--azul_marinho);
+  padding: 30px 20px !important;
+  gap: 10px;
+}
+
+.titulo_indi{
+  display: flex;
+  color: var(--cinza);
+  font-family: var(--fonte-arcade);
+  font-size: 12px;
+}
+
+.info p{
+  font-family: var(--fonte-destaque);
+  font-size: 25px;
+  color: var(--amarelo_claro);
+}
+
+.legenda_indi{
+  display: flex;
+  color: var(--branco);
+}
+
+.cards_indi,
+.card_grafico {
+  display: flex;
+  flex-direction: column;
+  border: solid 2px var(--azul_claro);
+  border-top: solid 2px var(--amarelo_claro);
+  background-color: var(--azul_marinho);
+  padding: 10px 10px;
+}
+
+.titulo_indi,
+.titulo_grafico {
+  display: flex;
+  color: var(--cinza);
+}
+
+.titulo_grafico{
+  font-family: var(--fonte-arcade);
+  color: var(--branco);
+}
+
+.graficos_dash {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  padding: 30px;
+}
+
+.card_grafico {
+  gap: 8px;
+  padding: 20px 20px;
+  
+}
+
+.legenda_grafico {
+  font-size: 12px;
+  color: var(--cinza);
+  font-family: var(--fonte-texto);
+}
+
+.area_grafico {
+  position: relative;
+  height: 280px;
 }

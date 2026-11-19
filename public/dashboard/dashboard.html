@@ -2,11 +2,11 @@
 <html lang="pt-br">
 
 <head>
-    <link rel="shortcut icon" href="../assets/icon/favicon2.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../assets/icon/img_logo.png" type="image/x-icon">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AquaTech | Dashboards</title>
+    <title>World Warriors | Dashboard</title>
 
     
     <link rel="stylesheet" href="./../css/dashboards.css">
@@ -32,7 +32,11 @@
 
     <div class="janela">
         <div class="header-left">
-            <h1>AquaTech</h1>
+            <div class="titulo">
+            <img src="../assets/icon/img_logo.png" alt="">
+            <h1>World Warriors</h1>
+            </div>
+
 
             <div class="hello">
                 <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
@@ -40,44 +44,116 @@
 
             <div class="btn-nav-white">
                 <a href="./cards.html">
-                    <h3>Aquários e Terrários</h3>
+                    <h3>Personagens</h3>
+                </a>
+            </div>
+
+
+            <div class="btn-nav-white">
+                <a href="./mural.html">
+                    <h3>Avaliação</h3>
                 </a>
             </div>
 
             <div class="btn-nav">
 
-                <h3>Gráficos</h3>
+                <h3>Dashboard</h3>
 
-            </div>
-
-            <div class="btn-nav-white">
-                <a href="./mural.html">
-                    <h3>Mural de Avisos</h3>
-                </a>
             </div>
 
             <div class="btn-logout" onclick="limparSessao()">
+                <img src="../assets/icon/icon_log_out.svg" alt="">
                 <h3>Sair</h3>
             </div>
 
         </div>
 
         <div class="dash">
-            <div id="alerta">
+            <div class="titulo_dashboard">
+                <h2>DASHBOARD DE POPULARIDADE</h2>
             </div>
 
-            <div class="btns-dash" id="btnAquario">
-                <!-- O gráfico é chamado de acordo com o id (fk_aquario) do banco  -->
+            <div class="indicadores">
+
+                <div class="cards_indi">
+                    <div class="titulo_indi">
+                     ESCOLHERAM PERSONAGEM
+                    </div>
+                    <div class="info">
+                        <p><span id="indi-escolha">10</span> de <span id="indi-cadastro">12</span></p>
+                    </div>
+                    <div class="legenda_indi">
+                        <p><span id="indi-percentual-cadastro">83,3%</span> dos cadastrados</p>
+                    </div>
+                </div>
+
+                <div class="cards_indi">
+                    <div class="titulo_indi">
+                     CONCLUSÃO DA AVALIAÇÃO
+                    </div>
+                    <div class="info">
+                        <p><span id="indi-avaliacao">8</span> de <span id="indi-avaliacao-base">10</span></p>
+                    </div>
+                    <div class="legenda_indi">
+                        <p><span id="indi-percentual-avaliacao">80,0%</span> de quem escolheu</p>
+                    </div>
+                </div>
+
+                <div class="cards_indi">
+                    <div class="titulo_indi">
+                     MÉDIA DE ESTRELAS
+                    </div>
+                    <div class="info">
+                        <p id="indi-media">4,1</p>
+                    </div>
+                    <div class="legenda_indi">
+                        <p>média de <span id="indi-media-total">8</span> avaliações</p>
+                    </div>
+                </div>
+
+                <div class="cards_indi">
+                    <div class="titulo_indi">
+                     PERSONAGEM LÍDER
+                    </div>
+                    <div class="info">
+                        <p id="indi-lider">Ryu</p>
+                    </div>
+                    <div class="legenda_indi">
+                        <p><span id="indi-lider-votos">3</span> votos - <span id="indi-lider-percentual">30%</span> dos votos</p>
+                    </div>
+                </div>
+
+
             </div>
-            <div id="graficos">
+
+            <div class="graficos_dash">
+
+
+                <div class="card_grafico">
+                    <div class="titulo_grafico">POPULARIDADE DOS LUTADORES</div>
+                    <p class="legenda_grafico">Quais dos 8 personagens os usuários escolheram como favorito</p>
+                    <div class="area_grafico">
+                        <canvas id="grafico-popularidade"></canvas>
+                    </div>
+                </div>
+
+                
+                <div class="card_grafico">
+                    <div class="titulo_grafico">AVALIAÇÃO DO JOGO</div>
+                    <p class="legenda_grafico">Como os usuários avaliaram o jogo de 1 a 5 estrelas</p>
+                    <div class="area_grafico">
+                        <canvas id="grafico-notas"></canvas>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
 
-
 </body>
 
 </html>
+
 
 <script>
     b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
