@@ -52,7 +52,9 @@
 
             <div class="btn-nav-white">
 
-                <a href="./dashboard.html"><h3>Dashboard</h3></a>
+                <a href="./dashboard.html">
+                    <h3>Dashboard</h3>
+                </a>
 
             </div>
 
@@ -185,9 +187,31 @@
     function confirmarEscolha() {
         if (idPersonagem == 0) {
             alert("Selecione um lutador antes de confirmar!")
-        } else {
-            console.log(idPersonagem)
+            return
         }
+
+        fetch("/consulta/consultaPersonagem", {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+            }
+        }).then(function (resposta) {
+            console.log("Status da resposta:", resposta.status);
+
+            if (resposta.ok) {
+                resposta.json().then(function (json) {
+                    console.log("Array recebido do banco:", json);
+
+                    for (let i = 0; i < json.length; i++) {
+                        console.log(json[i]);
+                    }
+                });
+            } else {
+                console.error("Houve um erro ao consultar os personagens!");
+            }
+        }).catch(function (erro) {
+            console.error("Erro na requisição:", erro);
+        });
     }
 </script>
 

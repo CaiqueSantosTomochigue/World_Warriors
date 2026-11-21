@@ -9,6 +9,7 @@ comandos para mysql server
 CREATE DATABASE world_warriors;
 USE world_warriors;
 
+
 CREATE TABLE escolha_personagem(
 id INT PRIMARY KEY AUTO_INCREMENT,
 nome VARCHAR(150) NOT NULL
@@ -34,5 +35,32 @@ CONSTRAINT cfk_usuario
 		REFERENCES usuario(id)
 );
 
+INSERT INTO usuario (nome, email, senha, fk_escolha_personagem) VALUES
+("Caique", "caique@caique.com", "testeteste", 1);
+
+INSERT INTO usuario (nome, email, senha, fk_escolha_personagem) VALUES
+("Joao", "asdasdasd@aSADA.com", "testeteste", 8);
+
+INSERT INTO escolha_personagem (nome) VALUES
+("Ryu"),
+("Ken"),
+("Chun-Li"),
+("Guile"),
+("Zangief"),
+("E.Honda"),
+("Blanka"),
+("Dhalsim");
+
+SELECT COUNT(usuario.fk_escolha_personagem) AS votos, escolha_personagem.nome FROM usuario
+RIGHT JOIN escolha_personagem
+ON usuario.fk_escolha_personagem = escolha_personagem.id
+GROUP BY escolha_personagem.nome
+ORDER BY votos DESC;
 
 SELECT user FROM mysql.user;
+
+SELECT * FROM usuario;
+
+SELECT * FROM escolha_personagem;
+
+
