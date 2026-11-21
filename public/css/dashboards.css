@@ -395,6 +395,7 @@ canvas {
   flex-direction: row;
   gap: 16px;
   padding: 30px;
+  justify-content: center;
 }
 
 .card_grafico {

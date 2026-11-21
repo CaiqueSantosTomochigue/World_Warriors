@@ -13,6 +13,28 @@ function consultaPersonagem() {
     return database.executar(instrucaoSql);
 }
 
+function obterIndicadores() {
+    console.log("Acesso a consulta dos indicadores foi realizada com sucesso")
+    var instrucaoSql = `
+            SELECT * FROM vw_progresso_usuarios;
+    `
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
+function obterEstrelas() {
+    console.log("Acesso a consulta das avaliações foi realizada com sucesso")
+    var instrucaoSql = `
+            SELECT u.id, u.nome, a.qtd_estrelas, a.descricao
+            FROM usuario u
+            LEFT JOIN avaliacao a ON a.fk_usuario = u.id;
+    `
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
 module.exports = {
-    consultaPersonagem
+    consultaPersonagem,
+    obterIndicadores,
+    obterEstrelas
 }
