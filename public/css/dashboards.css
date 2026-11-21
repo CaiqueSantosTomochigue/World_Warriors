@@ -464,9 +464,11 @@ canvas {
 }
 
 .card_selecionado img {
-  display: flex;
-  height: fit-content;
-  width: fit-content;
+    display: block;
+    width: 100%;
+    height: 310px;
+    object-fit: contain;
+    object-position: center;
 }
 
 .card_info {
@@ -577,4 +579,132 @@ canvas {
   border-color: var(--amarelo_claro);
   background-color: var(--azul_escuro);
   transform: translateY(-3px);
+}
+
+
+/*PAGINA AVALIACAO*/
+
+.avaliacao_dash {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 24px;
+  padding: 0px 30px;
+}
+
+.card_capa {
+  display: flex;
+  flex-direction: column;
+  width: 360px;
+  border: solid 2px var(--azul_claro);
+  background-color: var(--azul_marinho);
+}
+
+.card_capa img {
+  display: block;
+  width: 100%;
+  height: 446px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.card_capa p {
+  padding: 12px 16px;
+  color: var(--cinza);
+  font-family: var(--fonte-texto);
+  font-size: 12px;
+}
+
+.card_avaliacao {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  border: solid 2px var(--azul_claro);
+  border-top: solid 3px var(--amarelo_claro);
+  background-color: var(--azul_marinho);
+  padding: 20px 20px 55px 20px;
+}
+
+.rotulo_avaliacao {
+  color: var(--cinza);
+  font-family: var(--fonte-arcade);
+  font-size: 12px;
+}
+
+.estrelas {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  margin-top: 17px;
+}
+
+.estrela {
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  color: var(--cinza);
+  font-size: 40px;
+  line-height: 40px;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+
+.estrela:hover {
+  color: var(--amarelo_claro);
+  transform: scale(1.1);
+}
+
+.dica_avaliacao {
+  margin-top: 20px;
+  margin-bottom: 14px;
+  color: var(--cinza);
+  font-family: var(--fonte-texto);
+  font-size: 13px;
+}
+
+.card_avaliacao textarea {
+  width: 100%;
+  height: 120px;
+  margin-top: 19px;
+  padding: 12px;
+  border: solid 2px var(--azul_claro);
+  background-color: var(--azul_noite);
+  color: var(--branco);
+  font-family: var(--fonte-texto);
+  font-size: 14px;
+}
+
+.card_avaliacao textarea::placeholder {
+  color: var(--cinza);
+}
+
+.contador_avaliacao {
+  margin-top: 8px;
+  text-align: right;
+  color: var(--cinza);
+  font-family: var(--fonte-texto);
+  font-size: 12px;
+}
+
+.btn_enviar {
+  width: 100%;
+  margin-top: 16px;
+  padding: 16px 30px;
+  border: solid 2px var(--amarelo_claro);
+  background-color: var(--amarelo_claro);
+  color: black;
+  font-family: var(--fonte-arcade);
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0px 5px var(--amarelo_escuro);
+}
+
+.btn_enviar:hover {
+  box-shadow: 0px 8px var(--amarelo_escuro);
+}
+
+.btn_enviar:active {
+  transform: translateY(8px);
+  box-shadow: 0px 0px;
 }

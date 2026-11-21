@@ -142,6 +142,8 @@
 </body>
 
 <script>
+    b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+
     let idPersonagem = 0
 
     let listaImg = [
@@ -158,14 +160,14 @@
     let listaNome = ["RYU", "KEN", "CHUN-LI", "GUILE", "ZANGIEF", "E. HONDA", "BLANKA", "DHALSIM"]
 
     let listaTexto = [
-        "Lutador japonês que viaja o mundo em busca da verdadeira força. Mestre do Hadouken.",
-        "Norte-americano, amigo e rival de Ryu. Luta com estilo, velocidade e muita energia.",
-        "Investigadora chinesa da Interpol em busca de vingança. Famosa pela velocidade dos chutes.",
-        "Major da Força Aérea dos EUA que luta para vingar seu amigo Charlie. Dono do Sonic Boom.",
-        "O Ciclone Vermelho, lutador soviético de luta livre. Mestre dos agarrões, como o Spinning Piledriver.",
-        "Lutador de sumô japonês que quer mostrar ao mundo a força do sumô. Famoso pelos tapas rápidos.",
-        "Criatura selvagem criada na selva amazônica, no Brasil. Ataca com rolamentos e descargas elétricas.",
-        "Mestre de yoga indiano que luta para ajudar sua aldeia. Estica os membros para atacar de longe."
+        "Japão",
+        "Estados Unidos",
+        "China",
+        "Estados Unidos",
+        "União Soviética",
+        "Japão",
+        "Brasil",
+        "Indía"
     ]
 
     function selecionar(id) {
