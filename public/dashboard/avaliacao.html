@@ -91,11 +91,11 @@
                     <p class="dica_avaliacao">Escolha de 1 a 5 estrelas.</p>
 
                     <label class="rotulo_avaliacao">SUA OPINIÃO</label>
-                    <textarea id="ipt_opiniao" maxlength="150" rows="5"
+                    <textarea id="ipt_opiniao" maxlength="150" rows="5" oninput="contarCaracteres()"
                         placeholder="O que você achou do jogo?"></textarea>
                     <p class="contador_avaliacao" id="contador_opiniao">0/150</p>
 
-                    <button class="btn_enviar" id="btn_enviar">ENVIAR AVALIAÇÃO</button>
+                    <button class="btn_enviar" id="btn_enviar" onclick="enviarAvaliacao()">ENVIAR AVALIAÇÃO</button>
                 </div>
 
             </div>
@@ -113,5 +113,49 @@
 <script>
     b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
 
+    let estrelasEscolhidas = 0
 
+    function selecionar(n) {
+        estrelasEscolhidas = n
+
+        for (let i = 1; i <= 5; i++) {
+            let botao = document.getElementById("estrela_" + i)
+            if (i <= n) {
+                botao.innerHTML = "★"
+            } else {
+                botao.innerHTML = "☆"
+            }
+        }
+    }
+
+    function contarCaracteres() {
+        contador_opiniao.innerHTML = ipt_opiniao.value.length + "/150"
+    }
+
+    function enviarAvaliacao() {
+        if (estrelasEscolhidas == 0) {
+            alert("Escolha de 1 a 5 estrelas antes de enviar!")
+            return
+        }
+
+        fetch("/usuarios/avaliar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                idUsuarioServer: sessionStorage.ID_USUARIO,
+                estrelasServer: estrelasEscolhidas,
+                descricaoServer: ipt_opiniao.value
+            })
+        }).then(function (resposta) {
+            if (resposta.ok) {
+                window.location = "./dashboard.html"
+            } else {
+                alert("Houve um erro ao enviar sua avaliação!")
+            }
+        }).catch(function (erro) {
+            console.error("Erro na requisição:", erro)
+        })
+    }
 </script>

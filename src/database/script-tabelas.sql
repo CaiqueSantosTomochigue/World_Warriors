@@ -55,7 +55,7 @@ SELECT COUNT(usuario.fk_escolha_personagem) AS votos, escolha_personagem.nome FR
 RIGHT JOIN escolha_personagem
 ON usuario.fk_escolha_personagem = escolha_personagem.id
 GROUP BY escolha_personagem.nome
-ORDER BY votos DESC;
+ORDER BY votos DESC;	
 
 SELECT user FROM mysql.user;
 
@@ -63,4 +63,5 @@ SELECT * FROM usuario;
 
 SELECT * FROM escolha_personagem;
 
+SELECT * FROM avaliacao;
 

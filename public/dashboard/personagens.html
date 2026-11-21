@@ -190,28 +190,24 @@
             return
         }
 
-        fetch("/consulta/consultaPersonagem", {
-            method: "GET",
+        fetch("/usuarios/escolherPersonagem", {
+            method: "PUT",
             headers: {
-                "Content-Type": "application/json",
-            }
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                idUsuarioServer: sessionStorage.ID_USUARIO,
+                idPersonagemServer: idPersonagem
+            })
         }).then(function (resposta) {
-            console.log("Status da resposta:", resposta.status);
-
             if (resposta.ok) {
-                resposta.json().then(function (json) {
-                    console.log("Array recebido do banco:", json);
-
-                    for (let i = 0; i < json.length; i++) {
-                        console.log(json[i]);
-                    }
-                });
+                window.location = "./avaliacao.html"
             } else {
-                console.error("Houve um erro ao consultar os personagens!");
+                alert("Houve um erro ao salvar sua escolha!")
             }
         }).catch(function (erro) {
-            console.error("Erro na requisição:", erro);
-        });
+            console.error("Erro na requisição:", erro)
+        })
     }
 </script>
 

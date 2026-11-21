@@ -75,7 +75,50 @@ function cadastrar(req, res) {
     }
 }
 
+function escolherPersonagem(req, res) {
+    var idUsuario = req.body.idUsuarioServer;
+    var idPersonagem = req.body.idPersonagemServer;
+
+    if (idUsuario == undefined) {
+        res.status(400).send("Seu idUsuario está undefined!");
+    } else if (idPersonagem == undefined) {
+        res.status(400).send("Seu idPersonagem está undefined!");
+    } else {
+        usuarioModel.escolherPersonagem(idUsuario, idPersonagem)
+            .then(function (resultado) {
+                res.status(200).json(resultado);
+            }).catch(function (erro) {
+                console.log(erro);
+                res.status(500).json(erro.sqlMessage);
+            });
+    }
+}
+
+function avaliar(req, res) {
+    var idUsuario = req.body.idUsuarioServer;
+    var estrelas = req.body.estrelasServer;
+    var descricao = req.body.descricaoServer;
+
+    if (idUsuario == undefined) {
+        res.status(400).send("Seu idUsuario está undefined!");
+    } else if (estrelas == undefined) {
+        res.status(400).send("Suas estrelas estão undefined!");
+    } else if (descricao == undefined) {
+        res.status(400).send("Sua descrição está undefined!");
+    } else {
+        usuarioModel.avaliar(idUsuario, estrelas, descricao)
+            .then(function (resultado) {
+                res.status(200).json(resultado);
+            }).catch(function (erro) {
+                console.log(erro);
+                res.status(500).json(erro.sqlMessage);
+            });
+    }
+}
+
 module.exports = {
     autenticar,
-    cadastrar
-}
+    cadastrar,
+    escolherPersonagem,
+    avaliar
+};
