@@ -159,8 +159,8 @@
 <script>
     b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
 
-    Chart.defaults.color = "#FFFFFF"
-    Chart.defaults.borderColor = "rgba(255, 255, 255, 0.15)"
+    Chart.defaults.color = "#E9EBF5"
+    Chart.defaults.borderColor = "rgba(138, 150, 186, 0.2)"
 
     let graficoPopularidade
     let graficoNotas
@@ -313,10 +313,11 @@
                 type: "bar",
                 data: {
                     labels: nomes,
-                    datasets: [{ label: "Votos", data: votos, borderWidth: 1 }]
+                    datasets: [{ label: "Votos", data: votos, backgroundColor: "#FFD700", borderWidth: 0 }]
                 },
                 options: {
                     maintainAspectRatio: false,
+                    plugins: { legend: { display: false } },
                     scales: { y: { beginAtZero: true, ticks: { precision: 0 } } }
                 }
             })
@@ -335,7 +336,13 @@
                 type: "doughnut",
                 data: {
                     labels: rotulos,
-                    datasets: [{ label: "Avaliações", data: contagem, borderWidth: 1 }]
+                    datasets: [{
+                        label: "Avaliações",
+                        data: contagem,
+                        backgroundColor: ["#D7261E", "#F28C28", "#FFD700", "#4A58A2", "#E9EBF5"],
+                        borderColor: "#141D48",
+                        borderWidth: 3
+                    }]
                 },
                 options: { maintainAspectRatio: false }
             })
